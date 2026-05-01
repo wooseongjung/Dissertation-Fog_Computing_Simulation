@@ -1,0 +1,22 @@
+SUMO pipeline metadata for scratch/manchester_city_ns3.tcl
+=======================================
+Generated: 2026-04-27T21:56:50Z
+SUMO version: Eclipse SUMO sumo 1.26.0
+Pipeline script: tools/sumo_pipeline.sh
+
+OSM bounding box (lonMin, latMin, lonMax, latMax):
+  -2.255, 53.470, -2.225, 53.485
+
+Random seed (netconvert/randomTrips/sumo): 42
+randomTrips parameters: period=0.20 end=200 --random-departpos
+  (--validate intentionally NOT passed: randomTrips.py 1.26 invokes
+   duarouter with implicit working-directory paths that fail under
+   our working directory; duarouter is run explicitly in step 4.)
+duarouter: --ignore-errors --no-warnings true
+sumo: --step-length 1.0 --begin 0 --end 200 --seed 42
+traceExporter: NS-2 mobility output, begin=0 end=100
+Post-processing: kept only vehicles continuously alive in [0, 100] s, renumbered to contiguous IDs 0..N-1.
+
+Trips generated: 1001
+Final vehicle count in scratch/manchester_city_ns3.tcl:
+250 vehicles
